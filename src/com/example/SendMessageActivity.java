@@ -18,6 +18,7 @@ import android.widget.Toast;
  */
 public class SendMessageActivity extends Activity implements LocationListener {
     private Location currentLocation;
+    private LocationManager locationManager;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +29,23 @@ public class SendMessageActivity extends Activity implements LocationListener {
                 sendData();
             }
         });
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
     }
 
-   private void sendData() {
+    @Override
+    protected void onPause() {
+        super.onPause();
+        locationManager.removeUpdates(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+    }
+
+    private void sendData() {
        SharedPreferences pref = getSharedPreferences("mma_preferences", 0);
        String name = pref.getString("name", "");
        if (name == null || name.length() == 0) {

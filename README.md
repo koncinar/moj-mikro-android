@@ -10,6 +10,12 @@ https://developers.google.com/android/maps-api-signup
 
 Seznam sprememb:
 
+Verzija 6.0:
+Asinhrono branje podatkov
+- klik na zavihka Sporočila ter Zemljevid sedaj deluje takoj
+- sporočila se s strežnika preberejo v ozadju
+- dodan gumb v meniju za osvežitev trenutnega pogleda
+
 Verzija 5.0:
 Povezava s strežnikom
 - nov zavihek: Pošlji

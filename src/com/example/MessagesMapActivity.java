@@ -1,6 +1,7 @@
 package com.example;
 
 import android.os.Bundle;
+import android.widget.Toast;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
@@ -8,11 +9,12 @@ import com.google.android.maps.MyLocationOverlay;
 import java.text.DateFormat;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
-public class MessagesMapActivity extends MapActivity {
+public class MessagesMapActivity extends MapActivity implements MessagesLoadable {
     private DialogOverlay dialogOverlay;
     private MyLocationOverlay myLocationOverlay;
-    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,11 +46,17 @@ public class MessagesMapActivity extends MapActivity {
     }
 
     public void reloadMarkers() {
+        Toast.makeText(this, "Nalagam sporočila...", Toast.LENGTH_SHORT).show();
+        new AsyncMessagesLoader(this).execute();
+    }
+
+    public void loadMessages(List<Message> messages) {
         dialogOverlay.clear();
-        for (Message message : MessagesRetriever.INSTANCE.readMessages()) {
+        for (Message message : messages) {
             dialogOverlay.addItem(message.getLatitude(), message.getLongitude(),
                     MessageFormat.format("{0} - {1}", message.getAuthor(), DATE_FORMAT.format(message.getDate())),
                     message.getMessage());
         }
+        Toast.makeText(this, "Sporočila osvežena.", Toast.LENGTH_SHORT).show();
     }
 }

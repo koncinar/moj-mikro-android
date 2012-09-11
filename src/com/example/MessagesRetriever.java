@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class MessagesRetriever extends MessagesConnection {
     public static final MessagesRetriever INSTANCE = new MessagesRetriever();
-    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private static final String url = "http://logica.pro/read.php";
 
     private MessagesRetriever() { }

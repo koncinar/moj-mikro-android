@@ -28,15 +28,14 @@ public final class R {
         public static final int ic_tab_profile=0x7f02000a;
         public static final int ic_tab_profile_selected=0x7f02000b;
         public static final int ic_tab_profile_unselected=0x7f02000c;
-        public static final int ic_tab_region=0x7f02000d;
-        public static final int ic_tab_region_selected=0x7f02000e;
-        public static final int ic_tab_region_unselected=0x7f02000f;
-        public static final int ic_tab_send=0x7f020010;
-        public static final int ic_tab_send_selected=0x7f020011;
-        public static final int ic_tab_send_unselected=0x7f020012;
-        public static final int launcher_icon=0x7f020013;
-        public static final int main_bg=0x7f020014;
-        public static final int table_line=0x7f020015;
+        public static final int ic_tab_region_selected=0x7f02000d;
+        public static final int ic_tab_region_unselected=0x7f02000e;
+        public static final int ic_tab_send=0x7f02000f;
+        public static final int ic_tab_send_selected=0x7f020010;
+        public static final int ic_tab_send_unselected=0x7f020011;
+        public static final int launcher_icon=0x7f020012;
+        public static final int main_bg=0x7f020013;
+        public static final int table_line=0x7f020014;
     }
     public static final class id {
         public static final int aliens_checkbox=0x7f080005;
@@ -50,7 +49,8 @@ public final class R {
         public static final int messages_map=0x7f08000a;
         public static final int name_input=0x7f080000;
         public static final int ok_button=0x7f080008;
-        public static final int quit=0x7f08000d;
+        public static final int quit=0x7f08000e;
+        public static final int refresh=0x7f08000d;
         public static final int regions_spinner=0x7f080004;
         public static final int send_button=0x7f08000c;
     }
@@ -83,6 +83,7 @@ public final class R {
         public static final int my_info=0x7f040005;
         public static final int ok_text=0x7f040002;
         public static final int quit=0x7f04000e;
+        public static final int refresh=0x7f040016;
         public static final int region=0x7f040008;
         public static final int send_message_text=0x7f040010;
         public static final int send_text=0x7f040011;
