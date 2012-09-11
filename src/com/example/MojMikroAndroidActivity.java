@@ -22,14 +22,18 @@ public class MojMikroAndroidActivity extends TabActivity {
                 .setIndicator(getString(R.string.my_info),
                         getResources().getDrawable(R.drawable.ic_tab_profile))
                 .setContent(new Intent(this, MyActivity.class)));
-        tabHost.addTab(tabHost.newTabSpec("regions_tab")
-                .setIndicator(getString(R.string.regions),
-                        getResources().getDrawable(R.drawable.ic_tab_region))
-                .setContent(new Intent(this, RegionsListActivity.class)));
+        tabHost.addTab(tabHost.newTabSpec("messages_tab")
+                .setIndicator(getString(R.string.messages),
+                        getResources().getDrawable(R.drawable.ic_tab_messages))
+                .setContent(new Intent(this, MessagesListActivity.class)));
         tabHost.addTab(tabHost.newTabSpec("map_tab")
                 .setIndicator(getString(R.string.map),
                         getResources().getDrawable(R.drawable.ic_tab_map))
                 .setContent(new Intent(this, MessagesMapActivity.class)));
+        tabHost.addTab(tabHost.newTabSpec("send_message_tab")
+                .setIndicator(getString(R.string.send_message_text),
+                        getResources().getDrawable(R.drawable.ic_tab_send))
+                .setContent(new Intent(this, SendMessageActivity.class)));
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        android:stretchColumns="1"
+        style="@style/main_window">
+    <TableRow>
+        <TextView style="@style/PromptText"
+                  android:text="@string/insert_message"/>
+        <EditText android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/message_input"
+                  android:lines="5"
+                  android:singleLine="false"
+                  android:inputType="textMultiLine"
+                  android:gravity="top|left"/>
+    </TableRow>
+    <TableRow>
+        <TextView style="@style/border_row"/>
+    </TableRow>
+    <TableRow>
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/send_text"
+                android:id="@+id/send_button"
+                style="@style/nice_button"/>
+    </TableRow>
+</TableLayout>

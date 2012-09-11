@@ -45,7 +45,7 @@ public class MyActivity extends Activity {
     }
 
     private void saveData() {
-        SharedPreferences.Editor editor = getPreferences(0).edit();
+        SharedPreferences.Editor editor = getSharedPreferences("mma_preferences", 0).edit();
         String name = ((TextView) findViewById(R.id.name_input)).getText().toString();
         editor.putString("name", name);
         int gender = ((RadioGroup) findViewById(R.id.gender_radio_group)).getCheckedRadioButtonId();
@@ -61,7 +61,7 @@ public class MyActivity extends Activity {
     }
 
     private void loadData() {
-        SharedPreferences pref = getPreferences(0);
+        SharedPreferences pref = getSharedPreferences("mma_preferences", 0);
         String name = pref.getString("name", "");
         ((TextView) findViewById(R.id.name_input)).setText(name);
         int gender = pref.getInt("gender", -1);

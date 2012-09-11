@@ -6,7 +6,7 @@
     <string name="cancel_text">Razveljavi</string>
     <string name="hello_text">Pozdravljen/a, %s!</string>
     <string name="my_info">Moji podatki</string>
-    <string name="regions">Regije</string>
+    <string name="messages">Sporočila</string>
     <string name="map">Zemljevid</string>
     <string name="region">Izberi regijo</string>
     <string name="gender">Določi spol</string>
@@ -15,6 +15,13 @@
     <string name="gender_male">moški</string>
     <string name="gender_female">ženski</string>
     <string name="quit">Izhod</string>
+    <string name="insert_message">Napiši\nsporočilo</string>
+    <string name="send_message_text">Pošlji</string>
+    <string name="send_text">Pošlji</string>
+    <string name="enter_name_first">Najprej vpiši svoje ime.</string>
+    <string name="waiting_for_gps">Čakam na GPS lokacijo...</string>
+    <string name="message_sent">Sporočilo je poslano.</string>
+    <string name="message_not_sent">Sporočilo ni poslano.</string>
     <string-array name="all_regions">
         <item>Dolenjska</item>
         <item>Gorenjska</item>

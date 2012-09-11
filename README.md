@@ -10,6 +10,15 @@ https://developers.google.com/android/maps-api-signup
 
 Seznam sprememb:
 
+Verzija 5.0:
+Povezava s strežnikom
+- nov zavihek: Pošlji
+- pošiljanje sporočila na strežnik
+- sprememba zavihka: Regije -> Sporočila
+- branje sporočil s strežnika
+- prikaz sporočil na seznamu v zavihku Sporočila
+- prikaz sporočil na zemljevidu
+
 Verzija 4.0:
 Google zemljevid
 - nov zavihek: Zemljevid

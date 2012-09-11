@@ -5,9 +5,14 @@ import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
 
+import java.text.DateFormat;
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+
 public class MessagesMapActivity extends MapActivity {
     private DialogOverlay dialogOverlay;
     private MyLocationOverlay myLocationOverlay;
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +45,10 @@ public class MessagesMapActivity extends MapActivity {
 
     public void reloadMarkers() {
         dialogOverlay.clear();
-        dialogOverlay.addItem(46378883, 13834922, "Juhuuuu", "Jaz sem najvišji");
-        dialogOverlay.addItem(46120200, 14815438, "Center", "Jaz sem pa najbolj na sredini");
+        for (Message message : MessagesRetriever.INSTANCE.readMessages()) {
+            dialogOverlay.addItem(message.getLatitude(), message.getLongitude(),
+                    MessageFormat.format("{0} - {1}", message.getAuthor(), DATE_FORMAT.format(message.getDate())),
+                    message.getMessage());
+        }
     }
 }

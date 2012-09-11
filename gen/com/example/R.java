@@ -20,18 +20,23 @@ public final class R {
         public static final int button_bg_down=0x7f020002;
         public static final int ic_map_marker=0x7f020003;
         public static final int ic_quit=0x7f020004;
-        public static final int ic_tab_map=0x7f020005;
-        public static final int ic_tab_map_selected=0x7f020006;
-        public static final int ic_tab_map_unselected=0x7f020007;
-        public static final int ic_tab_profile=0x7f020008;
-        public static final int ic_tab_profile_selected=0x7f020009;
-        public static final int ic_tab_profile_unselected=0x7f02000a;
-        public static final int ic_tab_region=0x7f02000b;
-        public static final int ic_tab_region_selected=0x7f02000c;
-        public static final int ic_tab_region_unselected=0x7f02000d;
-        public static final int launcher_icon=0x7f02000e;
-        public static final int main_bg=0x7f02000f;
-        public static final int table_line=0x7f020010;
+        public static final int ic_refresh=0x7f020005;
+        public static final int ic_tab_map=0x7f020006;
+        public static final int ic_tab_map_selected=0x7f020007;
+        public static final int ic_tab_map_unselected=0x7f020008;
+        public static final int ic_tab_messages=0x7f020009;
+        public static final int ic_tab_profile=0x7f02000a;
+        public static final int ic_tab_profile_selected=0x7f02000b;
+        public static final int ic_tab_profile_unselected=0x7f02000c;
+        public static final int ic_tab_region=0x7f02000d;
+        public static final int ic_tab_region_selected=0x7f02000e;
+        public static final int ic_tab_region_unselected=0x7f02000f;
+        public static final int ic_tab_send=0x7f020010;
+        public static final int ic_tab_send_selected=0x7f020011;
+        public static final int ic_tab_send_unselected=0x7f020012;
+        public static final int launcher_icon=0x7f020013;
+        public static final int main_bg=0x7f020014;
+        public static final int table_line=0x7f020015;
     }
     public static final class id {
         public static final int aliens_checkbox=0x7f080005;
@@ -41,17 +46,20 @@ public final class R {
         public static final int gender_radio_female=0x7f080003;
         public static final int gender_radio_group=0x7f080001;
         public static final int gender_radio_male=0x7f080002;
+        public static final int message_input=0x7f08000b;
         public static final int messages_map=0x7f08000a;
         public static final int name_input=0x7f080000;
         public static final int ok_button=0x7f080008;
-        public static final int quit=0x7f08000b;
+        public static final int quit=0x7f08000d;
         public static final int regions_spinner=0x7f080004;
+        public static final int send_button=0x7f08000c;
     }
     public static final class layout {
         public static final int main=0x7f030000;
         public static final int messages_map=0x7f030001;
         public static final int moj_mikro_android=0x7f030002;
         public static final int regions_list_item=0x7f030003;
+        public static final int send_message=0x7f030004;
     }
     public static final class menu {
         public static final int main_menu=0x7f070000;
@@ -61,17 +69,24 @@ public final class R {
         public static final int app_name=0x7f040000;
         public static final int believe_in_aliens=0x7f04000b;
         public static final int cancel_text=0x7f040003;
+        public static final int enter_name_first=0x7f040012;
         public static final int gender=0x7f040009;
         public static final int gender_female=0x7f04000d;
         public static final int gender_male=0x7f04000c;
         public static final int hello_text=0x7f040004;
+        public static final int insert_message=0x7f04000f;
         public static final int insert_name=0x7f040001;
         public static final int map=0x7f040007;
+        public static final int message_not_sent=0x7f040015;
+        public static final int message_sent=0x7f040014;
+        public static final int messages=0x7f040006;
         public static final int my_info=0x7f040005;
         public static final int ok_text=0x7f040002;
         public static final int quit=0x7f04000e;
         public static final int region=0x7f040008;
-        public static final int regions=0x7f040006;
+        public static final int send_message_text=0x7f040010;
+        public static final int send_text=0x7f040011;
+        public static final int waiting_for_gps=0x7f040013;
     }
     public static final class style {
         public static final int PromptText=0x7f060000;
