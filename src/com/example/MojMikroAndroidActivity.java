@@ -26,6 +26,10 @@ public class MojMikroAndroidActivity extends TabActivity {
                 .setIndicator(getString(R.string.regions),
                         getResources().getDrawable(R.drawable.ic_tab_region))
                 .setContent(new Intent(this, RegionsListActivity.class)));
+        tabHost.addTab(tabHost.newTabSpec("map_tab")
+                .setIndicator(getString(R.string.map),
+                        getResources().getDrawable(R.drawable.ic_tab_map))
+                .setContent(new Intent(this, MessagesMapActivity.class)));
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

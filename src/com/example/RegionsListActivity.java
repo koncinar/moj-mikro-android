@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 public class RegionsListActivity extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setListAdapter(new ArrayAdapter(this,
+        setListAdapter(new ArrayAdapter<String>(this,
                 R.layout.regions_list_item,
                 getResources().getStringArray(R.array.all_regions)));
         getListView().setBackgroundResource(R.drawable.main_bg);
