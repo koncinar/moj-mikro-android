@@ -1,20 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent">
-    <TextView android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/insert_name"/>
-    <EditText android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/name_input"/>
-    <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ok_text"
-            android:id="@+id/ok_button"/>
-    <TextView android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/message"/>
-</LinearLayout>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:stretchColumns="1">
+    <TableRow>
+        <TextView android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/insert_name"/>
+        <EditText android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/name_input"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/gender"/>
+        <RadioGroup android:id="@+id/gender_radio_group"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+            <RadioButton android:id="@+id/gender_radio_male"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="@string/gender_male"/>
+            <RadioButton android:id="@+id/gender_radio_female"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="@string/gender_female"/>
+        </RadioGroup>
+    </TableRow>
+    <TableRow>
+        <TextView android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/region"/>
+        <Spinner android:id="@+id/regions_spinner"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/believe_in_aliens"/>
+        <CheckBox android:id="@+id/aliens_checkbox"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/android_experiences"/>
+        <TextView android:id="@+id/android_experiences_display"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"/>
+    </TableRow>
+    <TableRow>
+        <SeekBar android:id="@+id/android_experiences_seek_bar"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_span="2"/>
+    </TableRow>
+    <TableRow>
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ok_text"
+                android:id="@+id/ok_button"/>
+        <TextView android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/message"/>
+    </TableRow>
+</TableLayout>
 

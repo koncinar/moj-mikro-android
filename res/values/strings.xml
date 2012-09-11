@@ -4,5 +4,29 @@
     <string name="insert_name">Vpiši svoje ime:</string>
     <string name="ok_text">Ok</string>
     <string name="hello_text">Pozdravljen/a, %s!</string>
+    <string name="my_info">Moji podatki</string>
+    <string name="regions">Regije</string>
+    <string name="region">Regija:</string>
+    <string name="gender">Spol:</string>
+    <string name="android_experiences">Izkušnje z Androidom:</string>
+    <string name="believe_in_aliens">Verjameš v nezemljane:</string>
+    <string name="gender_male">moški</string>
+    <string name="gender_female">ženski</string>
+    <string-array name="all_regions">
+        <item>Dolenjska</item>
+        <item>Gorenjska</item>
+        <item>Koroška</item>
+        <item>Notranjska</item>
+        <item>Prekmurje</item>
+        <item>Primorska</item>
+        <item>Štajerska</item>
+    </string-array>
+    <string-array name="all_android_experiences">
+        <item>Prvič slišim</item>
+        <item>Imam napravo</item>
+        <item>Napredni uporabnik</item>
+        <item>Razvijalec začetnik</item>
+        <item>Napredni razvijalec</item>
+    </string-array>
 </resources>
 
