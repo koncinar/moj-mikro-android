@@ -1,6 +1,5 @@
 package com.example;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -16,5 +15,6 @@ public class RegionsListActivity extends ListActivity {
         setListAdapter(new ArrayAdapter(this,
                 R.layout.regions_list_item,
                 getResources().getStringArray(R.array.all_regions)));
+        getListView().setBackgroundResource(R.drawable.main_bg);
     }
 }

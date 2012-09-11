@@ -6,6 +6,13 @@ ki so objavljeni v reviji Moj Mikro.
 Seznam sprememb:
 
 Verzija 2.0:
+Nov grafični vmesnik
+- ikona aplikacije
+- ozadje
+- gumbi
+- ikone zavihkov
+
+Verzija 2.0:
 - uvedba zavihkov: Moji podatki, Regije
 - izbira spola
 - izbira regije

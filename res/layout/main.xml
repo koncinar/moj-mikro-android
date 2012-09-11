@@ -2,18 +2,21 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="fill_parent"
              android:layout_height="fill_parent"
-             android:stretchColumns="1">
+             android:stretchColumns="0"
+             style="@style/main_window">
     <TableRow>
-        <TextView android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
+        <TextView style="@style/PromptText"
                   android:text="@string/insert_name"/>
         <EditText android:layout_width="fill_parent"
                   android:layout_height="wrap_content"
-                  android:id="@+id/name_input"/>
+                  android:id="@+id/name_input"
+                  android:inputType="textPersonName"/>
     </TableRow>
+    <TableRow><TextView style="@style/border_row"/></TableRow>
     <TableRow>
         <TextView android:layout_width="fill_parent"
                   android:layout_height="wrap_content"
+                  style="@style/PromptText"
                   android:text="@string/gender"/>
         <RadioGroup android:id="@+id/gender_radio_group"
                     android:layout_width="fill_parent"
@@ -29,27 +32,26 @@
                          android:text="@string/gender_female"/>
         </RadioGroup>
     </TableRow>
+    <TableRow><TextView style="@style/border_row"/></TableRow>
     <TableRow>
-        <TextView android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
+        <TextView style="@style/PromptText"
                   android:text="@string/region"/>
         <Spinner android:id="@+id/regions_spinner"
                  android:layout_width="fill_parent"
                  android:layout_height="wrap_content"/>
     </TableRow>
+    <TableRow><TextView style="@style/border_row"/></TableRow>
     <TableRow>
-        <TextView android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
+        <TextView style="@style/PromptText"
                   android:text="@string/believe_in_aliens"/>
         <CheckBox android:id="@+id/aliens_checkbox"/>
     </TableRow>
+    <TableRow><TextView style="@style/border_row"/></TableRow>
     <TableRow>
-        <TextView android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
+        <TextView style="@style/PromptText"
                   android:text="@string/android_experiences"/>
         <TextView android:id="@+id/android_experiences_display"
-                  android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"/>
+                  style="@style/PromptText"/>
     </TableRow>
     <TableRow>
         <SeekBar android:id="@+id/android_experiences_seek_bar"
@@ -58,13 +60,17 @@
                  android:layout_span="2"/>
     </TableRow>
     <TableRow>
-        <Button android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ok_text"
-                android:id="@+id/ok_button"/>
-        <TextView android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-                  android:id="@+id/message"/>
+            <Button android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ok_text"
+                    android:id="@+id/ok_button"
+                    style="@style/nice_button"/>
+            <Button android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel_text"
+                    android:id="@+id/cancel_button"
+                    android:layout_marginLeft="10dp"
+                    style="@style/nice_button"/>
     </TableRow>
 </TableLayout>
 

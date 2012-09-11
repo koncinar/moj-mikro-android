@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MojMikroAndroid</string>
-    <string name="insert_name">Vpiši svoje ime:</string>
-    <string name="ok_text">Ok</string>
+    <string name="insert_name">Vpiši svoje ime</string>
+    <string name="ok_text">Shrani</string>
+    <string name="cancel_text">Razveljavi</string>
     <string name="hello_text">Pozdravljen/a, %s!</string>
     <string name="my_info">Moji podatki</string>
     <string name="regions">Regije</string>
-    <string name="region">Regija:</string>
-    <string name="gender">Spol:</string>
-    <string name="android_experiences">Izkušnje z Androidom:</string>
-    <string name="believe_in_aliens">Verjameš v nezemljane:</string>
+    <string name="region">Izberi regijo</string>
+    <string name="gender">Določi spol</string>
+    <string name="android_experiences">Izkušnje z Androidom</string>
+    <string name="believe_in_aliens">Verjameš v nezemljane?</string>
     <string name="gender_male">moški</string>
     <string name="gender_female">ženski</string>
+    <string name="quit">Izhod</string>
     <string-array name="all_regions">
         <item>Dolenjska</item>
         <item>Gorenjska</item>

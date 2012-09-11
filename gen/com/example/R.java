@@ -9,40 +9,68 @@ package com.example;
 
 public final class R {
     public static final class array {
-        public static final int all_android_experiences=0x7f040001;
-        public static final int all_regions=0x7f040000;
+        public static final int all_android_experiences=0x7f050001;
+        public static final int all_regions=0x7f050000;
     }
     public static final class attr {
     }
+    public static final class drawable {
+        public static final int button=0x7f020000;
+        public static final int button_bg=0x7f020001;
+        public static final int button_bg_down=0x7f020002;
+        public static final int ic_quit=0x7f020003;
+        public static final int ic_tab_profile=0x7f020004;
+        public static final int ic_tab_profile_selected=0x7f020005;
+        public static final int ic_tab_profile_unselected=0x7f020006;
+        public static final int ic_tab_region=0x7f020007;
+        public static final int ic_tab_region_selected=0x7f020008;
+        public static final int ic_tab_region_unselected=0x7f020009;
+        public static final int launcher_icon=0x7f02000a;
+        public static final int main_bg=0x7f02000b;
+        public static final int table_line=0x7f02000c;
+    }
     public static final class id {
-        public static final int aliens_checkbox=0x7f050005;
-        public static final int android_experiences_display=0x7f050006;
-        public static final int android_experiences_seek_bar=0x7f050007;
-        public static final int gender_radio_female=0x7f050003;
-        public static final int gender_radio_group=0x7f050001;
-        public static final int gender_radio_male=0x7f050002;
-        public static final int message=0x7f050009;
-        public static final int name_input=0x7f050000;
-        public static final int ok_button=0x7f050008;
-        public static final int regions_spinner=0x7f050004;
+        public static final int aliens_checkbox=0x7f080005;
+        public static final int android_experiences_display=0x7f080006;
+        public static final int android_experiences_seek_bar=0x7f080007;
+        public static final int cancel_button=0x7f080009;
+        public static final int gender_radio_female=0x7f080003;
+        public static final int gender_radio_group=0x7f080001;
+        public static final int gender_radio_male=0x7f080002;
+        public static final int name_input=0x7f080000;
+        public static final int ok_button=0x7f080008;
+        public static final int quit=0x7f08000a;
+        public static final int regions_spinner=0x7f080004;
     }
     public static final class layout {
-        public static final int main=0x7f020000;
-        public static final int moj_mikro_android=0x7f020001;
-        public static final int regions_list_item=0x7f020002;
+        public static final int main=0x7f030000;
+        public static final int moj_mikro_android=0x7f030001;
+        public static final int regions_list_item=0x7f030002;
+    }
+    public static final class menu {
+        public static final int main_menu=0x7f070000;
     }
     public static final class string {
-        public static final int android_experiences=0x7f030008;
-        public static final int app_name=0x7f030000;
-        public static final int believe_in_aliens=0x7f030009;
-        public static final int gender=0x7f030007;
-        public static final int gender_female=0x7f03000b;
-        public static final int gender_male=0x7f03000a;
-        public static final int hello_text=0x7f030003;
-        public static final int insert_name=0x7f030001;
-        public static final int my_info=0x7f030004;
-        public static final int ok_text=0x7f030002;
-        public static final int region=0x7f030006;
-        public static final int regions=0x7f030005;
+        public static final int android_experiences=0x7f040009;
+        public static final int app_name=0x7f040000;
+        public static final int believe_in_aliens=0x7f04000a;
+        public static final int cancel_text=0x7f040003;
+        public static final int gender=0x7f040008;
+        public static final int gender_female=0x7f04000c;
+        public static final int gender_male=0x7f04000b;
+        public static final int hello_text=0x7f040004;
+        public static final int insert_name=0x7f040001;
+        public static final int my_info=0x7f040005;
+        public static final int ok_text=0x7f040002;
+        public static final int quit=0x7f04000d;
+        public static final int region=0x7f040007;
+        public static final int regions=0x7f040006;
+    }
+    public static final class style {
+        public static final int PromptText=0x7f060000;
+        public static final int border_row=0x7f060003;
+        public static final int list_element=0x7f060004;
+        public static final int main_window=0x7f060001;
+        public static final int nice_button=0x7f060002;
     }
 }

@@ -1,8 +1,8 @@
 package com.example;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.*;
 
@@ -13,11 +13,12 @@ public class MyActivity extends Activity {
         setContentView(R.layout.main);
         findViewById(R.id.ok_button).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                EditText nameInput = (EditText) findViewById(R.id.name_input);
-                Editable name = nameInput.getText();
-                TextView messageView = (TextView) findViewById(R.id.message);
-                String message = getString(R.string.hello_text);
-                messageView.setText(String.format(message, name));
+                saveData();
+            }
+        });
+        findViewById(R.id.cancel_button).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                loadData();
             }
         });
 
@@ -40,6 +41,39 @@ public class MyActivity extends Activity {
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
+        loadData();
+    }
+
+    private void saveData() {
+        SharedPreferences.Editor editor = getPreferences(0).edit();
+        String name = ((TextView) findViewById(R.id.name_input)).getText().toString();
+        editor.putString("name", name);
+        int gender = ((RadioGroup) findViewById(R.id.gender_radio_group)).getCheckedRadioButtonId();
+        editor.putInt("gender", gender);
+        int region = ((Spinner) findViewById(R.id.regions_spinner)).getSelectedItemPosition();
+        editor.putInt("region", region);
+        boolean aliens = ((CheckBox) findViewById(R.id.aliens_checkbox)).isChecked();
+        editor.putBoolean("aliens", aliens);
+        int experiences = ((SeekBar) findViewById(R.id.android_experiences_seek_bar)).getProgress();
+        editor.putInt("experiences", experiences);
+        editor.commit();
+        Toast.makeText(this, "Podatki so shranjeni", Toast.LENGTH_SHORT).show();
+    }
+
+    private void loadData() {
+        SharedPreferences pref = getPreferences(0);
+        String name = pref.getString("name", "");
+        ((TextView) findViewById(R.id.name_input)).setText(name);
+        int gender = pref.getInt("gender", -1);
+        if (gender != -1) {
+            ((RadioButton) findViewById(gender)).setChecked(true);
+        }
+        int region = pref.getInt("region", 0);
+        ((Spinner) findViewById(R.id.regions_spinner)).setSelection(region);
+        boolean aliens = pref.getBoolean("aliens", false);
+        ((CheckBox) findViewById(R.id.aliens_checkbox)).setChecked(aliens);
+        int experiences = pref.getInt("experiences", 0);
+        ((SeekBar) findViewById(R.id.android_experiences_seek_bar)).setProgress(experiences);
     }
 }
 
