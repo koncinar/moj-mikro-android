@@ -43,12 +43,13 @@ public class MessagesListActivity extends ListActivity implements MessagesLoadab
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
+        MojMikroAndroidActivity mmaActivity = (MojMikroAndroidActivity) this.getParent();
         switch (item.getItemId()) {
             case R.id.show_on_map:
-                Toast.makeText(this, "Prikaži na zemljevidu", Toast.LENGTH_SHORT).show();
+                mmaActivity.switchTab("map_tab");
                 return true;
             case R.id.reply:
-                Toast.makeText(this, "Odgovori", Toast.LENGTH_SHORT).show();
+                mmaActivity.switchTab("send_message_tab");
                 return true;
         }
         return super.onContextItemSelected(item);

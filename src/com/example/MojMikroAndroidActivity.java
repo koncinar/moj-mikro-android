@@ -67,5 +67,10 @@ public class MojMikroAndroidActivity extends TabActivity {
             ((MessagesMapActivity) currentActivity).reloadMarkers();
         }
     }
+
+    public void switchTab(String tag) {
+        TabHost tabHost = getTabHost();
+        tabHost.setCurrentTabByTag(tag);
+    }
 }
 
