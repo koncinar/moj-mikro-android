@@ -2,6 +2,10 @@ package com.example;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -27,7 +31,28 @@ public class MessagesListActivity extends ListActivity implements MessagesLoadab
         getListView().setBackgroundResource(R.drawable.main_bg);
         getListView().setCacheColorHint(0);
         reloadMessages();
+        registerForContextMenu(getListView());
     }
+
+@Override
+public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+    super.onCreateContextMenu(menu, v, menuInfo);
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.list_context_menu, menu);
+}
+
+@Override
+public boolean onContextItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+        case R.id.show_on_map:
+            Toast.makeText(this, "Prikaži na zemljevidu", Toast.LENGTH_SHORT).show();
+            return true;
+        case R.id.reply:
+            Toast.makeText(this, "Odgovori", Toast.LENGTH_SHORT).show();
+            return true;
+    }
+    return super.onContextItemSelected(item);
+}
 
     public void reloadMessages() {
         Toast.makeText(this, "Nalagam sporočila...", Toast.LENGTH_SHORT).show();

@@ -23,6 +23,8 @@
     <string name="message_sent">Sporočilo je poslano.</string>
     <string name="message_not_sent">Sporočilo ni poslano.</string>
     <string name="refresh">Osveži</string>
+    <string name="reply">Odgovori</string>
+    <string name="show_on_map">Prikaži na zemljevidu</string>
     <string-array name="all_regions">
         <item>Dolenjska</item>
         <item>Gorenjska</item>

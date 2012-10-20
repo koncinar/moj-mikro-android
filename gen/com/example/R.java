@@ -49,10 +49,12 @@ public final class R {
         public static final int messages_map=0x7f08000a;
         public static final int name_input=0x7f080000;
         public static final int ok_button=0x7f080008;
-        public static final int quit=0x7f08000e;
-        public static final int refresh=0x7f08000d;
+        public static final int quit=0x7f080010;
+        public static final int refresh=0x7f08000f;
         public static final int regions_spinner=0x7f080004;
+        public static final int reply=0x7f08000e;
         public static final int send_button=0x7f08000c;
+        public static final int show_on_map=0x7f08000d;
     }
     public static final class layout {
         public static final int main=0x7f030000;
@@ -62,7 +64,8 @@ public final class R {
         public static final int send_message=0x7f030004;
     }
     public static final class menu {
-        public static final int main_menu=0x7f070000;
+        public static final int list_context_menu=0x7f070000;
+        public static final int main_menu=0x7f070001;
     }
     public static final class string {
         public static final int android_experiences=0x7f04000a;
@@ -85,8 +88,10 @@ public final class R {
         public static final int quit=0x7f04000e;
         public static final int refresh=0x7f040016;
         public static final int region=0x7f040008;
+        public static final int reply=0x7f040017;
         public static final int send_message_text=0x7f040010;
         public static final int send_text=0x7f040011;
+        public static final int show_on_map=0x7f040018;
         public static final int waiting_for_gps=0x7f040013;
     }
     public static final class style {
