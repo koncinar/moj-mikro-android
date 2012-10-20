@@ -25,6 +25,7 @@ public class MessagesListActivity extends ListActivity implements MessagesLoadab
         listAdapter = new ArrayAdapter<String>(this, R.layout.regions_list_item);
         setListAdapter(listAdapter);
         getListView().setBackgroundResource(R.drawable.main_bg);
+        getListView().setCacheColorHint(0);
         reloadMessages();
     }
 
