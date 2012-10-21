@@ -21,7 +21,7 @@ import java.util.List;
  * Date: 15.3.12
  * Time: 23:17
  */
-public class MessagesListActivity extends ListActivity implements MessagesLoadable {
+public class MessagesListActivity extends ListActivity implements MessagesLoadable, AdapterView.OnItemClickListener {
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private ArrayAdapter<String> listAdapter;
     private List<Message> messages;
@@ -32,6 +32,7 @@ public class MessagesListActivity extends ListActivity implements MessagesLoadab
         setListAdapter(listAdapter);
         getListView().setBackgroundResource(R.drawable.main_bg);
         getListView().setCacheColorHint(0);
+        getListView().setOnItemClickListener(this);
         reloadMessages();
         registerForContextMenu(getListView());
     }
@@ -84,5 +85,11 @@ public class MessagesListActivity extends ListActivity implements MessagesLoadab
                     message.getAuthor(), DATE_FORMAT.format(message.getDate()), message.getMessage()));
         }
         return messages;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        MojMikroAndroidActivity mmaActivity = (MojMikroAndroidActivity) this.getParent();
+        mmaActivity.switchTab("map_tab", messages.get(i));
     }
 }
