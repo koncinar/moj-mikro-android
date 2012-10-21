@@ -11,12 +11,14 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.MessageFormat;
+
 /**
  * User: rok
  * Date: 8/15/12
  * Time: 10:22 AM
  */
-public class SendMessageActivity extends Activity implements LocationListener {
+public class SendMessageActivity extends Activity implements LocationListener, MessageSelectable {
     private Location currentLocation;
     private LocationManager locationManager;
 
@@ -46,25 +48,25 @@ public class SendMessageActivity extends Activity implements LocationListener {
     }
 
     private void sendData() {
-       SharedPreferences pref = getSharedPreferences("mma_preferences", 0);
-       String name = pref.getString("name", "");
-       if (name == null || name.length() == 0) {
-           Toast.makeText(this, getString(R.string.enter_name_first), Toast.LENGTH_SHORT).show();
-           return;
-       }
-       TextView messageTextView = (TextView) findViewById(R.id.message_input);
-       String message = messageTextView.getText().toString();
-       if (currentLocation == null) {
-           Toast.makeText(this, getString(R.string.waiting_for_gps), Toast.LENGTH_SHORT).show();
-           return;
-       }
-       boolean success = MessageSender.INSTANCE.sendMessage(name, message, (int) (currentLocation.getLongitude() * 1000000), (int) (currentLocation.getLatitude() * 1000000));
-       if (success) {
-           Toast.makeText(this, getString(R.string.message_sent), Toast.LENGTH_SHORT).show();
-       } else {
-           Toast.makeText(this, getString(R.string.message_not_sent), Toast.LENGTH_SHORT).show();
-       }
-   }
+        SharedPreferences pref = getSharedPreferences("mma_preferences", 0);
+        String name = pref.getString("name", "");
+        if (name == null || name.length() == 0) {
+            Toast.makeText(this, getString(R.string.enter_name_first), Toast.LENGTH_SHORT).show();
+            return;
+        }
+        TextView messageTextView = (TextView) findViewById(R.id.message_input);
+        String message = messageTextView.getText().toString();
+        if (currentLocation == null) {
+            Toast.makeText(this, getString(R.string.waiting_for_gps), Toast.LENGTH_SHORT).show();
+            return;
+        }
+        boolean success = MessageSender.INSTANCE.sendMessage(name, message, (int) (currentLocation.getLongitude() * 1000000), (int) (currentLocation.getLatitude() * 1000000));
+        if (success) {
+            Toast.makeText(this, getString(R.string.message_sent), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, getString(R.string.message_not_sent), Toast.LENGTH_SHORT).show();
+        }
+    }
 
     @Override
     public void onLocationChanged(Location location) {
@@ -72,11 +74,26 @@ public class SendMessageActivity extends Activity implements LocationListener {
     }
 
     @Override
-    public void onStatusChanged(String s, int i, Bundle bundle) { }
+    public void onStatusChanged(String s, int i, Bundle bundle) {
+    }
 
     @Override
-    public void onProviderEnabled(String s) { }
+    public void onProviderEnabled(String s) {
+    }
 
     @Override
-    public void onProviderDisabled(String s) { }
+    public void onProviderDisabled(String s) {
+    }
+
+    @Override
+    public void showSelectedMessage(Message selectedMessage) {
+        TextView messageTextView = (TextView) findViewById(R.id.message_input);
+        String author = selectedMessage.getAuthor();
+        messageTextView.append(getHashtag(author));
+    }
+
+    private String getHashtag(String userName) {
+        String condensedUserName = userName.replaceAll(" ", "");
+        return MessageFormat.format("#{0}", condensedUserName);
+    }
 }
