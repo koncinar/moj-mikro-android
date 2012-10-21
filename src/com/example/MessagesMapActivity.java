@@ -14,6 +14,7 @@ import java.util.List;
 
 public class MessagesMapActivity extends MapActivity implements MessagesLoadable, MessageSelectable {
     private DialogOverlay dialogOverlay;
+    private DialogOverlay selectedMessageDialogOverlay;
     private MyLocationOverlay myLocationOverlay;
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -23,6 +24,7 @@ public class MessagesMapActivity extends MapActivity implements MessagesLoadable
         MapView mapView = (MapView) findViewById(R.id.messages_map);
         mapView.setBuiltInZoomControls(true);
         dialogOverlay = new DialogOverlay(getResources().getDrawable(R.drawable.ic_map_marker), this);
+        selectedMessageDialogOverlay = new DialogOverlay(getResources().getDrawable(R.drawable.ic_map_marker_selected), this);
         mapView.getOverlays().add(dialogOverlay);
         reloadMarkers();
         myLocationOverlay = new MyLocationOverlay(this, mapView);
@@ -64,8 +66,10 @@ public class MessagesMapActivity extends MapActivity implements MessagesLoadable
     @Override
     public void showSelectedMessage(Message selectedMessage) {
         MapView mapView = (MapView) findViewById(R.id.messages_map);
-        DialogOverlay selectedMessageDialogOverlay = new DialogOverlay(getResources().getDrawable(R.drawable.ic_map_marker_selected), this);
-        mapView.getOverlays().add(selectedMessageDialogOverlay);
+        if (!mapView.getOverlays().contains(selectedMessageDialogOverlay)) {
+            mapView.getOverlays().add(selectedMessageDialogOverlay);
+        }
+        selectedMessageDialogOverlay.clear();
         selectedMessageDialogOverlay.addItem(selectedMessage.getLatitude(), selectedMessage.getLongitude(),
                 MessageFormat.format("{0} - {1}", selectedMessage.getAuthor(), DATE_FORMAT.format(selectedMessage.getDate())),
                 selectedMessage.getMessage());
