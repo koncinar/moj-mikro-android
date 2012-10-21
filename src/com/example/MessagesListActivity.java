@@ -6,6 +6,7 @@ import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import java.util.List;
 public class MessagesListActivity extends ListActivity implements MessagesLoadable {
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private ArrayAdapter<String> listAdapter;
+    private List<Message> messages;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +48,18 @@ public class MessagesListActivity extends ListActivity implements MessagesLoadab
         MojMikroAndroidActivity mmaActivity = (MojMikroAndroidActivity) this.getParent();
         switch (item.getItemId()) {
             case R.id.show_on_map:
-                mmaActivity.switchTab("map_tab");
+                mmaActivity.switchTab("map_tab", getSelectedMessage(item));
                 return true;
             case R.id.reply:
-                mmaActivity.switchTab("send_message_tab");
+                mmaActivity.switchTab("send_message_tab", getSelectedMessage(item));
                 return true;
         }
         return super.onContextItemSelected(item);
+    }
+
+    private Message getSelectedMessage(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        return messages.get(menuInfo.position);
     }
 
     public void reloadMessages() {
@@ -62,6 +69,7 @@ public class MessagesListActivity extends ListActivity implements MessagesLoadab
 
     @Override
     public void loadMessages(List<Message> messages) {
+        this.messages = messages;
         listAdapter.clear();
         for (String message : flattenMessages(messages)) {
             listAdapter.add(message);

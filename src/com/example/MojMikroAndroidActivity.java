@@ -72,5 +72,14 @@ public class MojMikroAndroidActivity extends TabActivity {
         TabHost tabHost = getTabHost();
         tabHost.setCurrentTabByTag(tag);
     }
+
+    public void switchTab(String tag, Message selectedMessage) {
+        switchTab(tag);
+        Activity tabActivity = getLocalActivityManager().getActivity(tag);
+        if (tabActivity instanceof MessageSelectable) {
+            MessageSelectable activity = (MessageSelectable) tabActivity;
+            activity.showSelectedMessage(selectedMessage);
+        }
+    }
 }
 

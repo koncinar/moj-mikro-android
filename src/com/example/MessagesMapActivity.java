@@ -2,6 +2,7 @@ package com.example;
 
 import android.os.Bundle;
 import android.widget.Toast;
+import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
@@ -11,7 +12,7 @@ import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class MessagesMapActivity extends MapActivity implements MessagesLoadable {
+public class MessagesMapActivity extends MapActivity implements MessagesLoadable, MessageSelectable {
     private DialogOverlay dialogOverlay;
     private MyLocationOverlay myLocationOverlay;
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -58,5 +59,17 @@ public class MessagesMapActivity extends MapActivity implements MessagesLoadable
                     message.getMessage());
         }
         Toast.makeText(this, "Sporočila osvežena.", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showSelectedMessage(Message selectedMessage) {
+        MapView mapView = (MapView) findViewById(R.id.messages_map);
+        DialogOverlay selectedMessageDialogOverlay = new DialogOverlay(getResources().getDrawable(R.drawable.ic_map_marker_selected), this);
+        mapView.getOverlays().add(selectedMessageDialogOverlay);
+        selectedMessageDialogOverlay.addItem(selectedMessage.getLatitude(), selectedMessage.getLongitude(),
+                MessageFormat.format("{0} - {1}", selectedMessage.getAuthor(), DATE_FORMAT.format(selectedMessage.getDate())),
+                selectedMessage.getMessage());
+        GeoPoint center = new GeoPoint(selectedMessage.getLatitude(), selectedMessage.getLongitude());
+        mapView.getController().animateTo(center);
     }
 }
