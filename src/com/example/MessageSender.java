@@ -20,8 +20,8 @@ public class MessageSender extends MessagesConnection {
         Map<String, String> parameters = new HashMap<String, String>(4);
         try {
             parameters.put("author", encode(author));
+            parameters.put("message", encode(message));
         } catch (UnsupportedEncodingException ignored) { }
-        parameters.put("message", message);
         parameters.put("longitude", String.valueOf(longitude));
         parameters.put("latitude", String.valueOf(latitude));
         String response = readFromServer(parameters, url);
