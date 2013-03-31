@@ -11,7 +11,7 @@ import java.util.Map;
  * Time: 10:44 AM
  */
 public class MessageSender extends MessagesConnection {
-    private static final String url = "http://logica.pro/write.php";
+    private static final String url = "http://heart-designs.net/write.php";
     public static final MessageSender INSTANCE = new MessageSender();
 
     private MessageSender() { }
